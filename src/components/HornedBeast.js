@@ -39,7 +39,7 @@ class HornedBeast extends React.Component {
 
                     </Card.Body>
                 </Card>
-
+               
 
             </div>
 
