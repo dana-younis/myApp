@@ -1,17 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
-import Footer from './components/Footer';
+import SelectedBeast from './components/SelectedBeast';
+import data from './components/data.json';
 
 
-class App extends React.Component{
-  render(){
-    return(
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: data,
+      show: false,
+      selectedAnimal: {},
+    }
+  }
+  
+  hideModal = () => {
+    this.setState({ show: false, selectedAnimal: {} });
+  }
+  renderingSelectedAnimal = (title) => {
+    let selectedAnimal = data.find(beast => {
+      if (beast.title === title) {
+        return beast
+      }
+    })
+    this.setState({
+      show: true,
+      selectedAnimal: selectedAnimal
+    })
+  }
+  render() {
+    return (
       <div>
         <Header/>
-        <Main/>
+        <Main data={this.state.data} renderingSelectedAnimal={this.renderingSelectedAnimal} />
+        <SelectedBeast show={this.state.show} selectedAnimal={this.state.selectedAnimal} 
+        handleClose={this.hideModal} />
         <Footer/>
       </div>
     )
