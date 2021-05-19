@@ -9,25 +9,26 @@ class Main extends React.Component {
 
 
 
-    filterHorns = (event) => {
-        let filterHorns = event.target.value;
-        let hornsArray;
-        if (filterHorns) {
-            hornsArray = data.filter((item) => {
-                if (filterHorns == item.horns) {
-                    return item
-                }
-                if (filterHorns == 'All') {
-                    return data
-                }
+   
+  filterHorns = (event) => {
+    let filterHorns = event.target.value;
+    let hornsArray;
+    if (filterHorns) {
+        hornsArray = data.filter((item) => {
+            if (filterHorns == item.horns) {
+                return item
+            }
+            if (filterHorns == 'All') {
+                return data
+            }
 
 
-            })
+        })
 
-        }
-
-        this.props.renderApp(hornsArray);
     }
+
+    this.props.renderApp(hornsArray);
+}
 
 
 
