@@ -16,7 +16,7 @@ class App extends React.Component {
       selectedAnimal: {},
     }
   }
-  
+
   hideModal = () => {
     this.setState({ show: false, selectedAnimal: {} });
   }
@@ -31,14 +31,24 @@ class App extends React.Component {
       selectedAnimal: selectedAnimal
     })
   }
+  renderApp = (value) => {
+    this.setState({
+      data: value
+    })
+  }
+
+
+
+
   render() {
     return (
       <div>
-        <Header/>
-        <Main data={this.state.data} renderingSelectedAnimal={this.renderingSelectedAnimal} />
-        <SelectedBeast show={this.state.show} selectedAnimal={this.state.selectedAnimal} 
-        handleClose={this.hideModal} />
-        <Footer/>
+        <Header />
+        <Main data={this.state.data} renderingSelectedAnimal={this.renderingSelectedAnimal} renderApp={this.renderApp} />
+        <SelectedBeast show={this.state.show} selectedAnimal={this.state.selectedAnimal}
+          handleClose={this.hideModal}
+        />
+        <Footer />
       </div>
     )
   }

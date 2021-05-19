@@ -77,12 +77,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-Number and name of feature: _______React State and Props_________________________
+Number and name of feature: React State and Props__________________
 
-Estimate of time needed to complete: ____3hours_
+Estimate of time needed to complete: ___3hours
 
-Start time: ____3.30_
+Start time: ___3.30
 
-Finish time: _____
+Finish time: 11_
 
-Actual time needed to complete: ____
+Actual time needed to complete: __7hours
