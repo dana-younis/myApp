@@ -31,7 +31,7 @@ class App extends React.Component {
       selectedAnimal: selectedAnimal
     })
   }
-  renderApp = (value) => {
+  renderApp =(value) => {
     this.setState({
       data: value
     })
